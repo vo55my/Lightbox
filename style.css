@@ -1,0 +1,196 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 18px/36px;
+  font-family: 'Bebas Neue', cursive;
+  background-color: #ddd;
+}
+
+h1 {
+  font-size: 80px;
+  margin: 50px 0;
+  text-align: center;
+  text-shadow: 1px 1px 1px white;
+}
+
+.container {
+  width: 700px;
+  background-color: white;
+  margin: auto;
+  padding: 20px;
+  box-shadow: 0 0 3px 3px rgba(0, 0, 0, .2);
+  border-radius: 5px;
+}
+
+.gallery li {
+  width: 120px;
+  height: 120px;
+  border: 5px solid #666;
+  float: left;
+  margin-right: 10px;
+  position: relative;
+  list-style: none;
+}
+
+.gallery li,
+.gallery li a img,
+.gallery li span {
+  border-radius: 50%;
+}
+
+.gallery li span {
+  display: block;
+  width: 120px;
+  height: 120px;
+  background-color: rgba(200, 200, 200, .5);
+  position: absolute;
+  top: 0;
+  text-align: center;
+  line-height: 120px;
+  color: #333;
+  text-shadow: 1px 1px 1px #ddd;
+  opacity: 0;
+  transform: scale(0) rotate(0);
+  transition: .3s;
+}
+
+.gallery li a:hover span {
+  opacity: 1;
+  transform: scale(1) rotate(360deg);
+}
+
+.clear {
+  clear: both;
+}
+
+.overlay {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0);
+  z-index: 9999;
+  transition: .4s;
+  text-align: center;
+  padding: 100px 0;
+}
+
+/* Overlay */
+.overlay:target {
+  width: auto;
+  height: auto;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, .6);
+}
+
+.overlay img {
+  max-height: 100%;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, .6);
+}
+
+.overlay:target img {
+  animation: fadeNavigation 1s;
+}
+
+.overlay .close {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  margin-left: -20px;
+  color: white;
+  text-decoration: none;
+  background-color: black;
+  border: 1px solid white;
+  line-height: 15px;
+  padding: 5px;
+  opacity: 0;
+}
+
+.overlay:target .close {
+  animation: slideDownFade .5s .5s forwards;
+}
+
+.overlay:target .next,
+.overlay:target .back {
+  animation: fadeNavigation .5s .5s forwards;
+}
+
+/* Navigasi */
+.next, .back {
+  width: 48px;
+  height: 48px;
+  background-image: url(../Lightbox/img/next.png);
+  position: absolute;
+  text-indent: -9999px;
+  top: 45%;
+  margin-left: 50px;
+  opacity: 0;
+}
+
+.back {
+  background-image: url(../Lightbox/img/back.png);
+  margin-left: -100px;
+}
+
+/* Animasi */
+@keyframes fadeNavigation {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomDanFade {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slideDownFade {
+  0% {
+    opacity: 0;
+    margin-top: -20px;
+  }
+
+  100% {
+    opacity: 1;
+    margin-top: 0;
+  }
+}
+
+/* Responsive */
+@media only screen and (max-width: 800px) {
+  .container {
+    width: 200px;
+    margin: 15% 25%;
+  }
+
+  .gallery li {
+    margin: 10px 30px;
+  }
+
+  .overlay .close {
+    top: 120px;
+  }
+
+  .overlay img {
+    max-height: 70%;
+    max-width: 70%;
+    margin-top: 70px;
+  }
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Lightbox</title>
+</head>
+<body>
+  <h1>Resident Evil</h1>
+  <div class="container">
+    <ul class="gallery">
+      <li>
+        <a href="#gambar-1">
+          <img src="img/thumbnail/chris.jpg">
+          <span>Chris Redfield</span>
+        </a>
+        <div class="overlay" id="gambar-1">
+          <a href="#" class="close">x close</a>
+          <a href="#gambar-5" class="back">Back</a>
+          <img src="img/full/chris.jpg">
+          <a href="#gambar-2" class="next">Next</a>
+        </div>
+      </li>
+      <li>
+        <a href="#gambar-2">
+          <img src="img/thumbnail/jill.jpg">
+          <span>Jill Valentine</span>
+        </a>
+        <div class="overlay" id="gambar-2">
+          <a href="#" class="close">x close</a>
+          <a href="#gambar-1" class="back">Back</a>
+          <img src="img/full/jill.jpg">
+          <a href="#gambar-3" class="next">Next</a>
+        </div>
+      </li>
+      <li>
+        <a href="#gambar-3">
+          <img src="img/thumbnail/leon.jpg">
+          <span>Leon S. Kennedy</span>
+        </a>
+        <div class="overlay" id="gambar-3">
+          <a href="#" class="close">x close</a>
+          <a href="#gambar-2" class="back">Back</a>
+          <img src="img/full/leon.jpg">
+          <a href="#gambar-4" class="next">Next</a>
+        </div>
+      </li>
+      <li>
+        <a href="#gambar-4">
+          <img src="img/thumbnail/ada.jpg">
+          <span>Ada Wong</span>
+        </a>
+        <div class="overlay" id="gambar-4">
+          <a href="#" class="close">x close</a>
+          <a href="#gambar-3" class="back">Back</a>
+          <img src="img/full/ada.jpg">
+          <a href="#gambar-5" class="next">Next</a>
+        </div>
+      </li>
+      <li>
+        <a href="#gambar-5">
+          <img src="img/thumbnail/ethan.jpg">
+          <span>Ethan Winters</span>
+        </a>
+        <div class="overlay" id="gambar-5">
+          <a href="#" class="close">x close</a>
+          <a href="#gambar-4" class="back">Back</a>
+          <img src="img/full/ethan.jpg">
+          <a href="#gambar-1" class="next">Next</a>
+        </div>
+      </li>
+      <div class="clear"></div>
+    </ul>
+  </div>
+</body>
+</html>
